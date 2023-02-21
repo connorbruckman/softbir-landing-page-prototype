@@ -1,0 +1,171 @@
+  :root {
+    --bg: 0, 0, 0;
+    --fg: 255, 255, 255;
+  }
+
+  .pane {
+    --gradient-height: 280px;
+  }
+
+  @media (min-width: 720px) {
+    .pane {
+      --gradient-height: 400px;
+    }
+  }
+
+  .jumbotron#recruiting {
+    --fg: 255, 255, 255;
+    --bg: 0, 0, 0;
+  }
+
+  .header-jumbotron {
+    --fg: 255, 255, 255;
+  }
+
+  .jumbotron {
+    position: relative;
+    height: 100%;
+    /*min-height: calc(100vh - var(--nav-height));*/
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .pane-grid {
+    display: grid;
+    flex-direction: row-reverse;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px 28px;
+    width: 93.3333333333%;
+    max-width: 1470px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 720px) {
+    .pane-grid {
+      grid-template-columns: 55fr 45fr;
+      grid-auto-flow: row;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .pane-grid {
+      grid-template-columns: 65fr 35fr;
+    }
+  }
+
+  .video-cover #recruiting-video-cover-wrap .fluidvids {
+    /* reset video-cover fluidvids behavior */
+    visibility: visible;
+    position: unset;
+    top: unset;
+    z-index: unset;
+  }
+
+  #recruiting-cover {
+    width: 177.777778vh !important;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+
+    /* wider, shorter than 16/9 */
+    #recruiting-cover {
+      width: 100vw !important;
+    }
+  }
+
+  /* modal */
+  @keyframes fade-in-vis {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    1% {
+      visibility: visible;
+      opacity: 0;
+    }
+
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out-vis {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    99% {
+      visibility: visible;
+      opacity: 0;
+    }
+
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  .video-modal {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .engine-webkit .video-modal {
+    background-color: unset;
+    -webkit-backdrop-filter: blur(1.5rem);
+    backdrop-filter: blur(1.5rem);
+  }
+
+  .is-modal-open .video-modal {
+    z-index: 4;
+    overflow: hidden;
+    animation: fade-in-vis 200ms forwards;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .is-modal-closing .video-modal {
+    animation: fade-out-vis 200ms forwards;
+  }
+
+  .video-modal-body-inner {
+    width: 100%;
+  }
+
+  @media (min-aspect-ratio: 16/10) {
+    .video-modal-body-inner {
+      width: 150vh;
+      max-width: 100%;
+    }
+  }
+
+  .video-modal-video {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    transform: scale(0.96);
+    transition: all 200ms;
+  }
+
+  .is-modal-open .video-modal-video {
+    transform: scale(1);
+  }
+
+  .video-modal-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
