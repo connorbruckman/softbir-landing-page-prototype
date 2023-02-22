@@ -1,404 +1,71 @@
-<html lang="en" class="js">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Softbir - Medical Software Solutions</title>
+    <!-- Bootstrap link -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Plugin for animated background -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Merriweather&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-  
-  <title>Softbir - Medical Software Solutions</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <link rel="stylesheet" href="css/openai_style.css">
-
-  <style>
-    :root {
-      --bg: 0, 0, 0;
-      --fg: 255, 255, 255;
-    }
-
-    .pane {
-      --gradient-height: 280px;
-    }
-
-    @media (min-width: 720px) {
-      .pane {
-        --gradient-height: 400px;
-      }
-    }
-
-    .jumbotron#recruiting {
-      --fg: 255, 255, 255;
-      --bg: 0, 0, 0;
-    }
-
-    .header-jumbotron {
-      --fg: 255, 255, 255;
-    }
-
-    .jumbotron {
-      position: relative;
-      height: 100%;
-      /*min-height: calc(100vh - var(--nav-height));*/
-      min-height: 100vh;
-      min-height: 100dvh;
-    }
-
-    .pane-grid {
-      display: grid;
-      flex-direction: row-reverse;
-      grid-template-rows: 1fr 1fr;
-      gap: 14px 28px;
-      width: 93.3333333333%;
-      max-width: 1470px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 720px) {
-      .pane-grid {
-        grid-template-columns: 55fr 45fr;
-        grid-auto-flow: row;
-        grid-template-rows: 1fr;
-      }
-    }
-
-    @media (min-width: 1280px) {
-      .pane-grid {
-        grid-template-columns: 65fr 35fr;
-      }
-    }
-
-    .video-cover #recruiting-video-cover-wrap .fluidvids {
-      /* reset video-cover fluidvids behavior */
-      visibility: visible;
-      position: unset;
-      top: unset;
-      z-index: unset;
-    }
-
-    #recruiting-cover {
-      width: 177.777778vh !important;
-    }
-
-    @media (min-aspect-ratio: 16/9) {
-
-      /* wider, shorter than 16/9 */
-      #recruiting-cover {
-        width: 100vw !important;
-      }
-    }
-
-    /* modal */
-    @keyframes fade-in-vis {
-      0% {
-        visibility: hidden;
-        opacity: 0;
-      }
-
-      1% {
-        visibility: visible;
-        opacity: 0;
-      }
-
-      100% {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-
-    @keyframes fade-out-vis {
-      0% {
-        visibility: visible;
-        opacity: 1;
-      }
-
-      99% {
-        visibility: visible;
-        opacity: 0;
-      }
-
-      100% {
-        visibility: hidden;
-        opacity: 0;
-      }
-    }
-
-    .video-modal {
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    .engine-webkit .video-modal {
-      background-color: unset;
-      -webkit-backdrop-filter: blur(1.5rem);
-      backdrop-filter: blur(1.5rem);
-    }
-
-    .is-modal-open .video-modal {
-      z-index: 4;
-      overflow: hidden;
-      animation: fade-in-vis 200ms forwards;
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .is-modal-closing .video-modal {
-      animation: fade-out-vis 200ms forwards;
-    }
-
-    .video-modal-body-inner {
-      width: 100%;
-    }
-
-    @media (min-aspect-ratio: 16/10) {
-      .video-modal-body-inner {
-        width: 150vh;
-        max-width: 100%;
-      }
-    }
-
-    .video-modal-video {
-      height: 0;
-      padding-bottom: 56.25%;
-      position: relative;
-      transform: scale(0.96);
-      transition: all 200ms;
-    }
-
-    .is-modal-open .video-modal-video {
-      transform: scale(1);
-    }
-
-    .video-modal-video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-
-  <link rel="icon" type="image/svg+xml" href="https://openai.com/assets/images/favicon.svg?v=f42478a3fb">
-  <meta name="description" content="OpenAI is an AI research and deployment company. Our mission is to ensure that artificial general intelligence benefits all of humanity.">
-
-  <style>
-    .fluidvids {
-      width: 100%;
-      max-width: 100%;
-      position: relative;
-    }
-
-    .fluidvids-item {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+	<link href="css/style.css" rel="stylesheet">
 </head>
-
-<body class="browser-chrome os-windows engine-webkit is-animated">
-
-
-  <section id="head">
-    <div class="mb-n5 bg-fg">
-      <header id="header" class="position-absolute w-100 header-jumbotron color-fg" style="z-index:1">
-        <nav class="nav">
-
-          <!-- <div class="bg-fg-7.5 backdrop-filter-blur color-fg pt-1/6 pb-0.125 text-center d-block no-style">
-            <div class="container d-flex flex-row justify-content-center small-copy">
-              <span class="d-none d-md-block"><a href="https://chat.openai.com" class="fade" target="_blank" rel="noopener">Introducing ChatGPT research release</a></span>
-
-              <div class="flex ml-md-0.5">
-                <a href="https://chat.openai.com" class="icon-external font-bold fade right" target="_blank" rel="noopener">Try<span class="d-md-none">&nbsp;ChatGPT</span></a>
-                <a href="/blog/chatgpt/" class="icon-next font-bold fade right ml-0.25">Learn more</a>
-              </div>
+<body>
+    <section id="hero">
+        <div class="iframe-wrapper"><iframe src="https://player.vimeo.com/video/800974072?h=f68cc18589?background=1&muted=1&autoplay=1&dnt=1&loop=1&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="softbir_website_video_demo_2.mp4"></iframe></div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="https://i.ibb.co/S3CgZSj/softbir-logo-white.png" height="20"></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link nav-text" href="https://apkamd.com/">ApkaMD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-text" href="https://nowrpm.com/">NowRPM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-text" href="https://visamadeez.com/">VisaMadeEZ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-text" href="https://rnstaff.com/">RNStaff</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="appbtn" href="index.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div> -->
-
-          <div class="container">
-            <div class="nav-row row align-items-start align-items-sm-center">
-              
-              <div class="col-6 col-sm nav-symbol-wrap">
-                <a href="/" class="nav-symbol"><svg id="openai-horizontal" xmlns="https://i.ibb.co/S3CgZSj/softbir-logo-white.png" viewBox="0 0 120 29.53">
-                    <img loading="lazy" src="https://i.ibb.co/S3CgZSj/softbir-logo-white.png" alt="softbir_logo2" itemprop="image"
-                      srcset="https://i.ibb.co/S3CgZSj/softbir-logo-white.png 1441w, https://i.ibb.co/S3CgZSj/softbir-logo-white.png 300w, https://i.ibb.co/S3CgZSj/softbir-logo-white.png 768w, https://i.ibb.co/S3CgZSj/softbir-logo-white.png 1024w"
-                      onload="pagespeed.CriticalImages.checkImageForCriticality(this);" title="softbir_logo2"></svg></a>
-              </div>
-
-              <div class="col-6 col-sm-auto small-caps">
-                <ul class="d-none d-sm-flex flex-row align-items-center justify-content-between">
-
-                  <li class="ml-sm-1.5 ml-md-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://apkamd.com/" data-slug="api">ApkaMD</a></li>
-
-                  <li class="ml-sm-1.5 ml-md-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://nowrpm.com/" data-slug="api">NowRPM</a></li>
-
-                  <li class="ml-sm-1.5 ml-md-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://visamadeez.com/" data-slug="research">VisaMadeEZ</a></li>
-
-                  <li class="ml-sm-1.5 ml-md-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://rnstaff.com/" data-slug="blog">RNStaff</a></li>
-
-                </ul>
-                <ul class="d-sm-none" style="margin-top:-1px">
-
-                  <li class="mb-0.25" style="margin-top:0.5px"><a class="nav-link" href="" data-slug="api">ApkaMD</a></li>
-
-                  <li class="mb-0.25" style="margin-top:0.5px"><a class="nav-link" href="" data-slug="api">NowRPM</a></li>
-
-                  <li class="mb-0.25" style="margin-top:0.5px"><a class="nav-link" href="" data-slug="research">VisaMadeEZ</a></li>
-
-                  <li class="mb-0.25" style="margin-top:0.5px"><a class="nav-link" href="" data-slug="blog">RNStaff</a></li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
         </nav>
-
-      </header>
-
-
-
-
-      <section class="jumbotron color-fg bg-bg d-flex align-items-end overflow-hidden" id="recruitment-video">
-
-        <div id="recruiting-cover" class="position-absolute d-flex overflow-hidden trbl-center" style="opacity:0.54">
-          <div class="fluidvids" style="padding-top: 56.25%;"><iframe id="recruiting-video-cover" class="transition-opacity fluidvids-item"
-              src="https://player.vimeo.com/video/800974072?h=f68cc18589&amp;autopause=1&amp;autoplay=0&amp;background=1&amp;loop=1&amp;muted=1&amp;playsinline=1&amp;transparent=1&amp;texttrack=false" width="640" height="360" frameborder="0"
-              allow="autoplay; fullscreen" allowfullscreen="" style="pointer-events: none; opacity: 1;" title="Medical software solutions for a rapidly accelerating world." data-fluidvids="loaded" data-dashlane-frameid="888"
-              data-ready="true"></iframe></div>
-        </div>
-
-        <div class="container intro" style="z-index:0">
-          <div class="max-width-xnarrow pt-8 pb-2.25">
-            <h1 class="mb-1">Simplifying healthcare for an accelerating world.</h1>
-            <h3 class="mb-3">Softbir, Inc. is a medical software focused company based in Indianapolis, Indiana that is improving healthcare through technology-enabled solutions. Softbir's suite of applications are eliminating wasteful spending, improving workflows, and ultimately improving patient care with data-proven outcomes.</h3>
-            <div class="btns">
-              <a class="btn btn-padded btn-circle btn-dark mr-0.75 js-video-modal-open" href="https://player.vimeo.com/video/800974072?h=f68cc18589" target="_blank" rel="noopener">Watch video</a>
-              <a class="btn btn-padded btn-circle btn-light mr-0.75 js-video-modal-open" href="https://player.vimeo.com/video/800974072?h=f68cc18589" target="_blank" rel="noopener">Our Solutions</a>
+        <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleCaptions">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-caption">
+                        <h5 class="animated fadeInDown" style="animation-delay: 1s">Simplifying healthcare for an accelerating world.</h5>
+                        <p class="animated fadeInUp d-none d-md-block" style="animation-delay: 2s;  font-weight: bold;">Softbir, Inc. is a medical software focused company based in Indianapolis, Indiana that is improving healthcare through technology-enabled solutions. Softbir's suite of applications are eliminating wasteful spending, improving workflows, and ultimately improving patient care with data-proven outcomes.</p>
+                        <p class="animated fadeInUp" style="animation-delay: 5s; font-weight: bold;"><a href="#">Our Solutions</a></p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </div>    
+    </section>
+    
+    <section id="apkamd">
 
-      </section>
+    </section>
 
-      <div class="video-modal js-video-modal d-flex align-items-center justify-content-center">
-        <div class="video-modal-body container">
-          <div class="video-modal-body-inner mx-auto">
-            <div class="video-modal-video">
-              <div class="no-fluidvids">
-                <div class="fluidvids" style="padding-top: 56.25%;"><iframe id="recruiting-video" src="https://player.vimeo.com/video/800974072?h=f68cc18589&amp;autopause=0&amp;transparent=1" width="640" height="360" frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="Medical software solutions for a rapidly accelerating world." class="fluidvids-item" data-fluidvids="loaded" data-dashlane-frameid="887"
-                    data-ready="true"></iframe></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js">
+	</script>
 
-    </div>
-
-
-  </section>
-
-  <script src="https://player.vimeo.com/api/player.js"></script>
-
-  <script>
-    var coverIframe = document.querySelector('iframe#recruiting-video-cover');
-    var coverPlayer = new Vimeo.Player(coverIframe);
-    coverPlayer.ready().then(function() {
-      coverIframe.style.opacity = 1;
-      coverPlayer.play();
-    });
-    var mainIframe = document.querySelector('iframe#recruiting-video');
-    var mainPlayer = new Vimeo.Player(mainIframe);
-    mainPlayer.ready().then(function() {
-      initHeroModal();
-      animateHeader(true, 5000);
-    });
-    var bodyEl = document.querySelector('body');
-    var modalOpenEl = document.querySelector('.js-video-modal-open');
-    var modalEl = document.querySelector('.js-video-modal');
-    var modalOpenClass = 'is-modal-open';
-    var modalClosingClass = 'is-modal-closing';
-    var animatedClass = 'is-animated';
-    var initHeroModal = function() {
-      if (!modalOpenEl || !modalEl) return;
-      modalOpenEl.addEventListener('click', function(e) {
-        e.preventDefault();
-        openModal(300);
-      });
-      modalEl.addEventListener('click', function(e) {
-        closeModal();
-      });
-      if (window.location.hash === '#video') {
-        openModal(1000);
-      }
-    };
-    document.onkeydown = function(e) {
-      e = e || window.event;
-      var isEscape = false;
-      if ('key' in e) {
-        isEscape = (e.key === 'Escape' || e.key === 'Esc');
-      } else {
-        isEscape = (e.keyCode === 27);
-      }
-      if (isEscape) {
-        if (!bodyEl.classList.contains(modalOpenClass)) return;
-        closeModal();
-      }
-    };
-    var handleModalScroll = function() {
-      if (!bodyEl.classList.contains(modalOpenClass)) return;
-      closeModal();
-    };
-    var openModal = function(t) {
-      bodyEl.classList.add(modalOpenClass);
-      setTimeout(function() {
-        mainPlayer.play().then(function() {
-          coverPlayer.pause();
-        });
-        animateHeader(false);
-        window.addEventListener('scroll', handleModalScroll);
-      }, t);
-    };
-    var closeModal = function() {
-      bodyEl.classList.remove(modalOpenClass);
-      bodyEl.classList.add(modalClosingClass);
-      window.removeEventListener('scroll', handleModalScroll);
-      window.setTimeout(function() {
-        bodyEl.classList.remove(modalClosingClass);
-        mainPlayer.pause().then(function() {
-          coverPlayer.play();
-        });
-        animateHeader(true, 1000);
-      }, 200);
-    };
-    var animateHeader = function(shouldAnimate = true, t = 0) {
-      setTimeout(function() {
-        if (shouldAnimate) {
-          bodyEl.classList.add(animatedClass);
-        } else {
-          bodyEl.classList.remove(animatedClass);
-        }
-      }, t);
-    };
-  </script>
 
 </body>
-
 </html>
-
-
-<!-- STOCK FOOTAGE: https://player.vimeo.com/video/104626862?h=e2e6fd4166 -->
-<!-- RODNEY MULLEN STOCK FOOTAGE: https://player.vimeo.com/video/86118122?h=3e2cf7769b -->
-<!-- SOFTBIR FOOTAGE DEMO: https://player.vimeo.com/video/800974072?h=f68cc18589 -->
