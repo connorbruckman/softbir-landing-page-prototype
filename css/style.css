@@ -21,8 +21,6 @@ iframe {
     pointer-events: none;
     overflow: hidden;
 }
-/* Make the iframe keep an aspect ratio, and
-position it in the middle of its parent wrapper*/
 
 .iframe-wrapper iframe {
     width: 100vw;
@@ -69,8 +67,8 @@ position it in the middle of its parent wrapper*/
 	line-height: 2.5;
 }
 .carousel-item {
-	height: 100vh;
-	min-height: 300px;
+	min-height: 100vh;
+	/* min-height: 300px; */
 }
 .carousel-caption {
 	z-index: 2;
@@ -104,11 +102,12 @@ position it in the middle of its parent wrapper*/
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.4);
 	z-index: 1;
 }
 .logo {
-    max-height: 8rem;
+	/* Width of the ApkaMD logo, the smallest logo available, to prevent size discrepancies between logos */
+	max-width: 390px;
 }
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
@@ -132,10 +131,14 @@ position it in the middle of its parent wrapper*/
 		font-size: .75rem;
 	}
 	.logo {
-		max-height: 3rem;
+		max-width: 60vw;
 	}
-	.carousel-container {
-		margin-bottom: auto;
+	.carousel-item {
+		min-height: 100vh;
+
+		/* height: 100vh;
+		min-height: 300px;
+		margin-bottom: 200px; */
 	}
 }
 .footer {
@@ -145,5 +148,8 @@ position it in the middle of its parent wrapper*/
     text-align: center;
 }
 .header-logo{
-	max-height: 1rem;
+	max-width: 5vw;
+	max-height: 2vw;
+	min-width: 100px;
+	min-height: 19.333px;
 }
