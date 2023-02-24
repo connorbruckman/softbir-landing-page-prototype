@@ -21,8 +21,6 @@ iframe {
     pointer-events: none;
     overflow: hidden;
 }
-/* Make the iframe keep an aspect ratio, and
-position it in the middle of its parent wrapper*/
 
 .iframe-wrapper iframe {
     width: 100vw;
@@ -79,11 +77,11 @@ position it in the middle of its parent wrapper*/
     font-family: 'Merriweather';
 	font-size: 3rem;
 	letter-spacing: 2px;
-    width: 100%;
+    width: 80%;
     margin: auto;
 }
 .carousel-caption p {
-	width: 100%;
+	width: 80%;
 	margin: auto;
 	font-size: 22px;
 	line-height: 1.8;
@@ -107,40 +105,27 @@ position it in the middle of its parent wrapper*/
 	background: rgba(0, 0, 0, 0.4);
 	z-index: 1;
 }
+.logo {
+    max-height: 8rem;
+}
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
 		text-align: center
 	}
 	.carousel-caption h5 {
-		font-size: 2rem
+		font-size: 2rem;
+		width: 100%
+	}
+	.carousel-caption p {
+		font-size: 14px;
+		width: 100%
 	}
 	.carousel-caption a {
-		font-size: 14px
+		font-size: 14px;
 	}
-}
-#apkamd {
-    margin:0;
-    padding:0;
-    min-height:100%;
-    background-color: #212529;
-}
-#nowrpm {
-    margin:0;
-    padding:0;
-    min-height:100%;
-    background-color: #999999;
-}
-#visamadeez {
-    margin:0;
-    padding:0;
-    min-height:100%;
-    background-color: #212529;
-}
-#rnstaff {
-    margin:0;
-    padding:0;
-    min-height:100%;
-    background-color: #999999;
+	.logo {
+		max-height: 4rem;
+	}
 }
 .footer {
     margin:0;
@@ -150,7 +135,4 @@ position it in the middle of its parent wrapper*/
 }
 .softbir-logo{
 	max-height: 1rem;
-}
-.logo {
-    width: 300px;
 }
