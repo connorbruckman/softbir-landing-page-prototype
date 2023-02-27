@@ -118,6 +118,9 @@ position it in the middle of its parent wrapper*/
 .carousel-control-next {
 	margin-top: 22.5vw;
 }
+.bottom-button-buffer {
+	height: 10vw;
+}
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
 		text-align: center
@@ -148,6 +151,9 @@ position it in the middle of its parent wrapper*/
 		/* height: 100vh;
 		min-height: 300px;
 		margin-bottom: 200px; */
+	}
+	.bottom-button-buffer {
+		height: 20vw;
 	}
 }
 .footer {
