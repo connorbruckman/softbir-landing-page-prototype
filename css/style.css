@@ -21,6 +21,8 @@ iframe {
     pointer-events: none;
     overflow: hidden;
 }
+/* Make the iframe keep an aspect ratio, and
+position it in the middle of its parent wrapper*/
 
 .iframe-wrapper iframe {
     width: 100vw;
@@ -108,6 +110,13 @@ iframe {
 .logo {
 	/* Width of the ApkaMD logo, the smallest logo available, to prevent size discrepancies between logos */
 	max-width: 390px;
+}
+.carousel-control-prev {
+	/* Pushes the carousel arrows downward to be better in line with the content. Less visible on mobile. */
+	margin-top: 22.5vw;
+}
+.carousel-control-next {
+	margin-top: 22.5vw;
 }
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
