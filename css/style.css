@@ -104,7 +104,7 @@ position it in the middle of its parent wrapper*/
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.55);
 	z-index: 1;
 }
 .logo {
@@ -121,7 +121,7 @@ position it in the middle of its parent wrapper*/
 .bottom-button-buffer {
 	height: 10vw;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1279px) {
 	.navbar-nav {
 		text-align: center
 	}
@@ -129,12 +129,14 @@ position it in the middle of its parent wrapper*/
 		align-items: center;
 		text-align: left;
 		font-size: 1rem;
+		font-weight: bold;
 		width: 100%
 	}
 	.carousel-caption p {
 		align-items: center;
 		text-align: justify;
 		font-size: .75rem;
+		font-weight: bold;
 		width: 100%
 	}
 	.carousel-caption a {
@@ -154,6 +156,38 @@ position it in the middle of its parent wrapper*/
 	}
 	.bottom-button-buffer {
 		height: 20vw;
+	}
+}
+/* Responsiveness for >1080p monitors. */
+@media only screen and (min-width: 1925px) {
+	.navbar-nav {
+		text-align: center
+	}
+	.carousel-caption h5 {
+		align-items: center;
+		font-size: 4rem;
+		font-weight: bold;
+		width: 100%
+	}
+	.carousel-caption p {
+		align-items: center;
+		font-size: 3rem;
+		font-weight: bold;
+		width: 100%
+	}
+	.carousel-caption a {
+		align-items: center;
+		text-align: center;
+		font-size: 3rem;
+	}
+	.logo {
+		min-width: 30vw;
+	}
+	.carousel-item {
+		min-height: 100vh;
+	}
+	.bottom-button-buffer {
+		height: 5vw;
 	}
 }
 .footer {
