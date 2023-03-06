@@ -24,7 +24,6 @@ iframe {
     overflow: hidden;
 }
 
-
 /* Make the iframe keep an aspect ratio, and
 position it in the middle of its parent wrapper*/
 
@@ -83,7 +82,6 @@ position it in the middle of its parent wrapper*/
 
 .carousel-item {
     min-height: 100vh;
-    /* min-height: 300px; */
 }
 
 .carousel-caption {
@@ -92,7 +90,7 @@ position it in the middle of its parent wrapper*/
 
 .carousel-caption h5 {
     font-family: 'Merriweather';
-    font-size: 3rem;
+    font-weight: bold;
     letter-spacing: 2px;
     width: 80%;
     margin: auto;
@@ -137,10 +135,6 @@ position it in the middle of its parent wrapper*/
     margin-top: 65vh;
 }
 
-.bottom-button-buffer {
-    height: 20vh;
-}
-
 /* Generic mobile responsiveness */
 @media only screen and (max-device-width: 599px) {
     .navbar-nav {
@@ -148,7 +142,6 @@ position it in the middle of its parent wrapper*/
     }
     .carousel-caption h5 {
         font-size: 1rem;
-        font-weight: bold;
         width: 100%
     }
     .carousel-caption p {
@@ -177,7 +170,6 @@ position it in the middle of its parent wrapper*/
     }
     .carousel-caption h5 {
         font-size: 2rem;
-        font-weight: bold;
         width: 90%
     }
     .carousel-caption p {
@@ -206,14 +198,6 @@ position it in the middle of its parent wrapper*/
         font-size: 2rem;
         width: 90%
     }
-    .carousel-caption p {
-
-        font-size: 1rem;
-        width: 90%
-    }
-    .carousel-caption a {
-        font-size: 1rem;
-    }
     .logo {
         max-width: 30vw;
     }
@@ -231,7 +215,6 @@ position it in the middle of its parent wrapper*/
         width: 80%
     }
     .carousel-caption p {
-
         font-size: 1.5rem;
         font-weight: bold;
         width: 80%
@@ -261,7 +244,6 @@ position it in the middle of its parent wrapper*/
     min-width: 100px;
     min-height: 19.333px;
 }
-
 
 /* Contact form settings */
 
